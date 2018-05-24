@@ -16,4 +16,9 @@ class HelloController extends Controller
         return view('hello.index',['items' => $items]);
 }
 
+	public function rest(Request $request)
+	{
+		return view('hello.rest');
+	}
+
 }

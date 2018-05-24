@@ -4,31 +4,31 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePeopleTable extends Migration
+class CreateBoardsTable extends Migration
 {
     /**
-     * マイグレーション実行
+     * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('peoples', function (Blueprint $table) {
+        Schema::create('boards', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('mail');
-            $table->integer('age');
+            $table->integer('person_id');
+            $table->string('title');
+            $table->string('message');1
             $table->timestamps();
         });
     }
 
     /**
-     * マイグレーションを戻す
+     * Reverse the migrations.
      *
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('people');
+        Schema::dropIfExists('boards');
     }
 }
